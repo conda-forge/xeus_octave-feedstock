@@ -42,7 +42,7 @@ requirements:
 
 test:
   commands:
-    - test -f ${PREFIX}/bin/xeus-octave  # [unix]
+    - test -f ${PREFIX}/bin/xoctave  # [unix]
 
 about:
   home: https://github.com/rapgenic/xeus-octave
