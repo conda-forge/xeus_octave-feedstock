@@ -3,7 +3,7 @@ cdt_name:
 channel_sources:
 - conda-forge
 channel_targets:
-- conda-forge dev
+- conda-forge xeus_octave_dev
 cxx_compiler:
 - gxx
 cxx_compiler_version:
@@ -15,5 +15,9 @@ libpng:
 pin_run_as_build:
   libpng:
     max_pin: x.x
+  zeromq:
+    max_pin: x.x
 target_platform:
 - linux-64
+zeromq:
+- 4.3.4
