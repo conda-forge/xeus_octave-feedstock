@@ -1,5 +1,5 @@
 {% set name = "xeus_octave" %}
-{% set version = "0.0.2dev1+ab1efe" %}
+{% set version = "0.0.2dev1+01de9a" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   git_url: https://github.com/rapgenic/xeus-octave.git
-  git_rev: ab1efe9a5bb4fc569343e826ca15aeda8fdaa7c2
+  git_rev: 01de9ac37626d662d35e1bbd5576390513246fb4
 
 build:
   number: 0
