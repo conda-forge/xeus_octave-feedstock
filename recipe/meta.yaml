@@ -1,5 +1,5 @@
 {% set name = "xeus_octave" %}
-{% set version = "0.0.2dev1+373d79" %}
+{% set version = "0.0.2dev1+ab1efe" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   git_url: https://github.com/rapgenic/xeus-octave.git
-  git_rev: 373d79385c175f19900e099a53215c9e148caabc
+  git_rev: ab1efe9a5bb4fc569343e826ca15aeda8fdaa7c2
 
 build:
   number: 0
@@ -34,11 +34,19 @@ requirements:
     - xeus >=2.0.0,<3.0
     - nlohmann_json >=3.9.1,<4.0
     - xorg-libxfixes  # [linux]
-    - glfw
+    #- glfw
+    - xorg-libx11            # [linux]
+    - xorg-libxrandr         # [linux]
+    - xorg-libxinerama       # [linux]
+    - xorg-libxcursor        # [linux]
+    - xorg-libxi             # [linux]
+    #
     - libpng
   run:
-    - glfw
+    # - glfw
     - octave
+    - xorg-libxrandr         # [linux]
+    - xorg-libxcursor        # [linux]
 
 test:
   commands:
