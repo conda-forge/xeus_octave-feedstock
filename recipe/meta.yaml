@@ -1,4 +1,4 @@
-{% set name = "xeus_octave" %}
+{% set name = "xeus-octave" %}
 {% set version = "0.0.2" %}
 
 package:
@@ -10,7 +10,7 @@ source:
   sha256: baadb52f4783fff106c7351692175ef97eb9c4969c1d82ae8f78f00efe1997b2
 
 build:
-  number: 1
+  number: 0
   skip: true  # [win]
 
 requirements:
@@ -36,7 +36,8 @@ requirements:
     - libpng
   run:
     - glfw
-    - octave
+    # Octave is missing a run_exports section
+    - {{ pin_compatible('octave', max_pin='x.x') }}
 
 test:
   commands:
