@@ -8,6 +8,8 @@ package:
 source:
   url: https://github.com/rapgenic/xeus-octave/archive/{{ version }}.tar.gz
   sha256: baadb52f4783fff106c7351692175ef97eb9c4969c1d82ae8f78f00efe1997b2
+  patches:
+    - comment-shutdown-call.patch 
 
 build:
   number: 0
@@ -28,7 +30,7 @@ requirements:
     - {{ cdt('libxext') }}     # [linux]
   host:
     - nlohmann_json >=3.9.1,<4.0
-    - octave
+    - octave >=7.0,<8.0
     - xeus >=1.0,<2.0
     - xproperty
     - xorg-libxfixes  # [linux]
