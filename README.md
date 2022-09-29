@@ -173,6 +173,7 @@ In order to produce a uniquely identifiable distribution:
 Feedstock Maintainers
 =====================
 
+* [@AntoinePrv](https://github.com/AntoinePrv/)
 * [@SylvainCorlay](https://github.com/SylvainCorlay/)
 * [@marimeireles](https://github.com/marimeireles/)
 * [@rapgenic](https://github.com/rapgenic/)
