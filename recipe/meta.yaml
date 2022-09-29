@@ -1,5 +1,5 @@
 {% set name = "xeus-octave" %}
-{% set version = "0.0.3" %}
+{% set version = "0.0.4" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/jupyter-xeus/xeus-octave/archive/v{{ version }}.tar.gz
-  sha256: 5d4600424ce2371036db37ae923d97a5ff3917b2a59baa1fd6e2290daa4b4e7a
+  sha256: 0dc1381c6a3ffbeaf8fcd80fdfee13a87f76e329081da5387ee8f51f6b052b6e
 
 build:
   number: 0
@@ -47,6 +47,7 @@ requirements:
 test:
   commands:
     - test -f ${PREFIX}/bin/xoctave  # [unix]
+    - xoctave --version
 
 about:
   home: https://github.com/rapgenic/xeus-octave
