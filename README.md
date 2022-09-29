@@ -7,10 +7,10 @@ Package license: GPL-2.0-or-later
 
 Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/xeus_octave-feedstock/blob/main/LICENSE.txt)
 
-Summary: xeus kernel for octave
+Summary: Xeus kernel for Octave
 
-xeus kernel for the mathematics-oriented syntax with built-in
-2D/3D plotting and visualization tools octave.
+Xeus kernel for the mathematics-oriented syntax with built-in
+2D/3D plotting and visualization tools Octave.
 
 
 Current build status
