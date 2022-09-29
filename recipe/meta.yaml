@@ -1,24 +1,20 @@
 {% set name = "xeus-octave" %}
-{% set version = "0.0.2" %}
+{% set version = "0.0.4" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://github.com/rapgenic/xeus-octave/archive/{{ version }}.tar.gz
-  sha256: baadb52f4783fff106c7351692175ef97eb9c4969c1d82ae8f78f00efe1997b2
-  patches:
-    - comment-shutdown-call.patch 
-    - no-fltk.patch
+  url: https://github.com/jupyter-xeus/xeus-octave/archive/v{{ version }}.tar.gz
+  sha256: 0dc1381c6a3ffbeaf8fcd80fdfee13a87f76e329081da5387ee8f51f6b052b6e
 
 build:
-  number: 1
+  number: 0
   skip: true  # [win]
 
 requirements:
   build:
-    - ninja
     - pkg-config  # [osx]
     - {{ compiler('cxx') }}
     - cmake
@@ -30,31 +26,38 @@ requirements:
     - {{ cdt('libxxf86vm') }}  # [linux]
     - {{ cdt('libxext') }}     # [linux]
   host:
-    - nlohmann_json >=3.9.1,<4.0
     - octave >=7.0,<8.0
-    - xeus >=1.0,<2.0
-    - xproperty
     - xorg-libxfixes  # [linux]
     - glfw
+    - mesalib
     - libpng
+    - xeus >=2.4,<3.0
+    - nlohmann_json >=3.9.1,<4.0
+    - cppzmq
+    - xtl >=0.7,<1.0
+    - xproperty
+
   run:
     - glfw
     # Octave is missing a run_exports section
     - {{ pin_compatible('octave', max_pin='x.x') }}
+    # Mesalib is missing a run_exports section
+    - {{ pin_compatible('mesalib', max_pin='x.x') }}
 
 test:
   commands:
-    - test -f ${PREFIX}/bin/xeus-octave  # [unix]
+    - test -f ${PREFIX}/bin/xoctave  # [unix]
+    - xoctave --version
 
 about:
   home: https://github.com/rapgenic/xeus-octave
   license: GPL-2.0-or-later
   license_file: LICENSE.txt
-  summary: 'xeus kernel for octave'
+  summary: 'Xeus kernel for Octave'
 
   description: |
-    xeus kernel for the mathematics-oriented syntax with built-in
-    2D/3D plotting and visualization tools octave.
+    Xeus kernel for the mathematics-oriented syntax with built-in
+    2D/3D plotting and visualization tools Octave.
 
 extra:
   recipe-maintainers:
