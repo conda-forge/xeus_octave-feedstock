@@ -1,5 +1,5 @@
 {% set name = "xeus-octave" %}
-{% set version = "0.0.6" %}
+{% set version = "0.0.7.dev0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/jupyter-xeus/xeus-octave/archive/v{{ version }}.tar.gz
-  sha256: 41a9fb6157c336b8782b42f09cf9b5e102b351a4175a393b7ef4ce05f90f9d1b
+  sha256: df4a176226fde33659c2bb0a72a48fd7def6d14b99e162d83980e26cd84822d6
 
 build:
   number: 0
@@ -29,7 +29,7 @@ requirements:
     - octave >=7.0,<8.0
     - xorg-libxfixes  # [linux]
     - glfw
-    - mesalib
+    - glad
     - libpng
     - xeus >=2.4,<3.0
     - nlohmann_json >=3.9.1,<4.0
