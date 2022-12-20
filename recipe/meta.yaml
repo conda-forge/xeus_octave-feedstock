@@ -1,5 +1,5 @@
 {% set name = "xeus-octave" %}
-{% set version = "0.0.8.dev0" %}
+{% set version = "0.0.8" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/jupyter-xeus/xeus-octave/archive/v{{ version }}.tar.gz
-  sha256: 5c865095aa791c34c2644be913255f55784c56895b3199c1dd75fb6937b911cc
+  sha256: 0bbdef605d69fd37008df6df961e1fd109d4d1fa5f4e5235203fe80b1c3d0428
 
 build:
   number: 0
