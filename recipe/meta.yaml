@@ -52,7 +52,7 @@ test:
     - nbval
     - pytest
     - pytest-rerunfailures
-    - {{ cdt('xorg-x11-server-xvfb') }}     # [linux]
+    # - {{ cdt('xorg-x11-server-xvfb') }}     # [linux]
   source_files:
     - test
   commands:
@@ -60,6 +60,7 @@ test:
     - xoctave --version
     - pytest test -k 'not plot'
     - pytest test -k 'plot_plotly'
+    # - xvfb-run pytest test -k 'plot_notebook'  # [linux]
 
 about:
   home: https://github.com/rapgenic/xeus-octave
