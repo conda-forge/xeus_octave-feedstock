@@ -10,7 +10,7 @@ source:
   sha256: b3b6f3fa001c4d5589836d4a5809829b96264966647098ca8f9d64f4afc020dc
 
 build:
-  number: 1
+  number: 2
   skip: true  # [win]
 
 requirements:
@@ -39,15 +39,28 @@ requirements:
 
   run:
     - glfw
+    - xeus
+    - zeromq
     # Octave is missing a run_exports section
     - {{ pin_compatible('octave', max_pin='x.x') }}
     # Mesalib is missing a run_exports section
     - {{ pin_compatible('mesalib', max_pin='x.x') }}
 
 test:
+  requires:
+    - jupyter_kernel_test >=0.4.3
+    - nbval
+    - pytest
+    - pytest-rerunfailures
+    # - {{ cdt('xorg-x11-server-xvfb') }}     # [linux]
+  source_files:
+    - test
   commands:
     - test -f ${PREFIX}/bin/xoctave  # [unix]
     - xoctave --version
+    - pytest test -k 'not plot'
+    - pytest test -k 'plot_plotly'
+    # - xvfb-run pytest test -k 'plot_notebook'  # [linux]
 
 about:
   home: https://github.com/rapgenic/xeus-octave
