@@ -1,5 +1,5 @@
 {% set name = "xeus-octave" %}
-{% set version = "0.1.0" %}
+{% set version = "0.2.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,15 +7,16 @@ package:
 
 source:
   url: https://github.com/jupyter-xeus/xeus-octave/archive/v{{ version }}.tar.gz
-  sha256: b3b6f3fa001c4d5589836d4a5809829b96264966647098ca8f9d64f4afc020dc
+  sha256: 077a3cbf7dab8aeec400ec8f2458b51cb39778c9c6dd41db7fefa702bca7f082
 
 build:
-  number: 5
+  number: 0
   skip: true  # [win]
 
 requirements:
   build:
     - pkg-config  # [osx]
+    - {{ stdlib("c") }}
     - {{ compiler('cxx') }}
     - cmake
     - make  # [unix]
@@ -26,21 +27,15 @@ requirements:
     - {{ cdt('libxxf86vm') }}  # [linux]
     - {{ cdt('libxext') }}     # [linux]
   host:
-    - octave >=7.0,<8.0
+    - octave >=8.0,<9.0
     - xorg-libxfixes  # [linux]
     - glfw
     - glad
     - libpng
-    - xeus-zmq >=1.0,<2.0
-    - nlohmann_json >=3.9.1,<4.0
-    - cppzmq
-    - xtl >=0.7,<1.0
-    - xproperty
-
+    - xeus >=5
+    - xeus-zmq >=3.0,<4.0
+    - nlohmann_json >=3.11.3,<4.0
   run:
-    - glfw
-    - xeus
-    - zeromq
     # Octave is missing a run_exports section
     - {{ pin_compatible('octave', max_pin='x.x') }}
     # Mesalib is missing a run_exports section
