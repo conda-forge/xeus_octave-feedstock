@@ -2,7 +2,7 @@
 {% set version = "0.2.0" %}
 
 package:
-  name: {{ name|lower }}
+  name: {{ name }}
   version: {{ version }}
 
 source:
@@ -10,12 +10,12 @@ source:
   sha256: 077a3cbf7dab8aeec400ec8f2458b51cb39778c9c6dd41db7fefa702bca7f082
 
 build:
-  number: 0
+  number: 1
   skip: true  # [win]
 
 requirements:
   build:
-    - pkg-config  # [osx]
+    - pkg-config
     - {{ stdlib("c") }}
     - {{ compiler('cxx') }}
     - cmake
@@ -61,8 +61,7 @@ about:
   home: https://github.com/rapgenic/xeus-octave
   license: GPL-2.0-or-later
   license_file: LICENSE.txt
-  summary: 'Xeus kernel for Octave'
-
+  summary: Xeus kernel for Octave
   description: |
     Xeus kernel for the mathematics-oriented syntax with built-in
     2D/3D plotting and visualization tools Octave.
