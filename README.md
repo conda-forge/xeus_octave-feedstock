@@ -181,6 +181,7 @@ Feedstock Maintainers
 =====================
 
 * [@AntoinePrv](https://github.com/AntoinePrv/)
+* [@IsabelParedes](https://github.com/IsabelParedes/)
 * [@SylvainCorlay](https://github.com/SylvainCorlay/)
 * [@marimeireles](https://github.com/marimeireles/)
 * [@rapgenic](https://github.com/rapgenic/)
