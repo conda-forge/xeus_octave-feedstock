@@ -60,7 +60,7 @@ test:
 about:
   home: https://github.com/rapgenic/xeus-octave
   license: GPL-2.0-or-later
-  license_file: LICENSE.txt
+  license_file: LICENSE
   summary: Xeus kernel for Octave
   description: |
     Xeus kernel for the mathematics-oriented syntax with built-in
